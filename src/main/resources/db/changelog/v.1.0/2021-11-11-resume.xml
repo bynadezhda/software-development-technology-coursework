@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="1" author="Nadezhda">
+        <createTable remarks="Таблица резюме" tableName="resume">
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column remarks="Имя" name="first_name" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column remarks="Фамилия" name="last_name" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column remarks="Возраст" name="age" type="bigint"/>
+            <column remarks="Образование" name="education" type="text"/>
+            <column remarks="Опыт" name="experience" type="text"/>
+            <column remarks="Навыки" name="skills" type="text"/>
+            <column remarks="О себе" name="about" type="text"/>
+            <column remarks="Пользователь" name="user_id" type="bigint">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column remarks="Видимость резюме" name = "visibility" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
